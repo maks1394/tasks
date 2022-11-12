@@ -1,0 +1,75 @@
+.message {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+}
+
+.imageAndText {
+    align-items: end;
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: end;
+    max-width: 100%;
+}
+
+.imageAndText img {
+    flex: 0 0 3rem;
+    max-width: 3rem;
+    order: 2;
+}
+
+.text {
+    background-color: var(--blue);
+    border-radius: .625rem .625rem 0 .625rem;
+    color: var(--white);
+    -webkit-filter: drop-shadow(0 1px 2px rgba(29,33,38,.1));
+    filter: drop-shadow(0 1px 2px rgba(29,33,38,.1));
+    margin-right: .75rem;
+    max-width: 65%;
+    padding: var(--message-py) var(--message-px);
+    position: relative;
+    text-align: right;
+}
+
+.text:after {
+    border-color: transparent transparent transparent var(--blue);
+    border-style: solid;
+    border-width: .75rem 0 0 .75rem;
+    bottom: 0;
+    content: "";
+    height: 0;
+    position: absolute;
+    right: -.75rem;
+    width: 0;
+    z-index: -1;
+}
+
+.name {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.messageText {
+    font-family: Montserrat,sans-serif;
+    font-size: 1rem;
+}
+
+.time {
+    flex: 0 0 3rem;
+    font-size: .625rem;
+    font-weight: 600;
+    justify-self: end;
+    margin-top: .313rem;
+    max-width: 3rem;
+    text-align: center;
+}
+
+:root {
+    --dark: #000;
+    --white: #fff;
+    --light: #f5f7fb;
+    --gray: #d9d9d9;
+    --blue: #06c;
+    --message-px: .813rem;
+    --message-py: .5rem;
+}
