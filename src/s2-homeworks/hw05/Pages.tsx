@@ -13,7 +13,6 @@ export const PATH = {
 
 function Pages() {
     const location = useLocation()
-    const currentPath = location.pathname
 
     return (
         <div>

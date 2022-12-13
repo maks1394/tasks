@@ -12,8 +12,6 @@ type PropsType = {
 export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
     const sidebarClass = s.sidebar
         + (open ? ' ' + s.open : '')
-    const location = useLocation()
-    const currentPath = location.pathname
     return (
         <>
             {/*затемнение справа от открытого меню*/}
@@ -33,7 +31,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                             id={'hw5-pre-junior-link'}
                             to={PATH.PRE_JUNIOR}
                             onClick={handleClose}
-                            className={({isActive}) => isActive ? s.active : currentPath === '/' ? s.active : ''} // делает студент
+                            className={({isActive}) => isActive ? s.active :  ''} // делает студент
                         >
                             Pre-junior
                         </NavLink>
