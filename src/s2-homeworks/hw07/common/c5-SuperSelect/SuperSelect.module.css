@@ -1,9 +1,29 @@
 .select {
+    min-width: 165px;
+    min-height: 24px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    background: #FFFFFF;
+    border: 1px solid #C2C2C2;
+    border-radius: 2px;
 }
 
 .select:focus {
+    outline: none;
 }
 
+.option:checked{
+    background: #0066CC;
+    color: #FFFFFF;
+}
 
-.option:hover {
+option:hover{
+    background: #FFFFFF;
+    color: #0066CC;
 }

@@ -1,15 +1,61 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
 .radio {
+    -webkit-appearance: none;
+    appearance: none;
+    font: inherit;
+    color: currentColor;
+    width: var(--size-radio);
+    height: var(--size-radio);
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 13px;
+    /*transform: translateY(-0.075em);*/
 }
 
 .radio::before {
+
 }
 
 
 .radio:checked::before {
+
 }
 
 .label {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    cursor: pointer;
 }
 
 .options {
+    display: flex;
+    flex-direction: column;
+}
+
+.label .checkMark{
+    width: calc(var(--size-radio)/2);
+    height: calc(var(--size-radio)/2);
+    border-radius: 50%;
+    position: absolute;
+    margin-left: calc((var(--size-radio) - (var(--size-radio)/2))/2);
+    background-color: black;
+    display: none;
+}
+
+.radio:checked ~.checkMark{
+    background-color: black;
+    display: inline-block;
+}
+
+:root{
+    --size-radio:1.15em;
 }
