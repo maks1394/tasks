@@ -34,6 +34,7 @@
     align-items: center;
     margin-bottom: 1em;
     cursor: pointer;
+    position: relative;
 }
 
 .options {
@@ -42,11 +43,12 @@
 }
 
 .label .checkMark{
-    width: calc(var(--size-radio)/2);
-    height: calc(var(--size-radio)/2);
+    --size-checkMark: calc(var(--size-radio)/2);
+    width: var(--size-checkMark);
+    height: var(--size-checkMark);
     border-radius: 50%;
     position: absolute;
-    margin-left: calc((var(--size-radio) - (var(--size-radio)/2))/2);
+    margin-left: calc((var(--size-radio) - var(--size-checkMark))/2);
     background-color: black;
     display: none;
 }
