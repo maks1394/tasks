@@ -6,15 +6,11 @@ import React, {
 } from 'react'
 import s from './SuperRadio.module.css'
 
-type DefaultRadioPropsType = DetailedHTMLProps<
-    InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
->
+type DefaultRadioPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement>
 // тип пропсов обычного спана
-type DefaultSpanPropsType = DetailedHTMLProps<
-    HTMLAttributes<HTMLSpanElement>,
-    HTMLSpanElement
->
+type DefaultSpanPropsType = DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>,
+    HTMLSpanElement>
 
 type SuperRadioPropsType = Omit<DefaultRadioPropsType, 'type'> & {
     options?: any[]
@@ -24,16 +20,16 @@ type SuperRadioPropsType = Omit<DefaultRadioPropsType, 'type'> & {
 }
 
 const SuperRadio: React.FC<SuperRadioPropsType> = ({
-    id,
-    name,
-    className,
-    options,
-    value,
-    onChange,
-    onChangeOption,
-    spanProps,
-    ...restProps
-}) => {
+                                                       id,
+                                                       name,
+                                                       className,
+                                                       options,
+                                                       value,
+                                                       onChange,
+                                                       onChangeOption,
+                                                       spanProps,
+                                                       ...restProps
+                                                   }) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
         // делают студенты
         onChangeOption?.(e.currentTarget.value)
@@ -51,9 +47,9 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
                     className={finalRadioClassName}
                     type={'radio'}
                     // name, checked, value делают студенты
-                    name ={name}
-                    checked={o.id==value}
-                    value = {o.id}
+                    name={name}
+                    checked={o.id == value}
+                    value={o.id}
                     onChange={onChangeCallback}
                     {...restProps}
                 />
