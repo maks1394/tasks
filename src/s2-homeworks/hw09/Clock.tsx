@@ -17,12 +17,7 @@ function Clock() {
             setDate(()=>new Date())
             setTimerId(setTimeout(tick,1000))
         },1000))
-        /*setTimerId(()=>setInterval (function tick(){
-            setDate(()=>new Date)
-            // setTimerId(()=>setTimeout(tick,1000))
-        },1000))*/
     }
-    //start()
     const stop = () => {
         // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
         clearTimeout(timerId)
@@ -35,7 +30,10 @@ function Clock() {
     const onMouseLeave = () => { // пишут студенты // спрятать дату если мышка не наведена
         setShow(false)
     }
-    const [stringDate,stringTime] = date.toLocaleString().split(', ')
+    // const [stringDate,stringTime] = date.toLocaleString().split(', ')
+    const stringTime = date.toLocaleTimeString('ru-RU') || <br/>
+    const stringDate = date.toLocaleDateString('ru-RU') || <br/>
+    // const testStringTime = stringTime.split(':',2).join(':')
     // const stringTime = 'date->time' || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
     // const stringDate = 'date->date' || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
