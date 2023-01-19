@@ -12,12 +12,25 @@ import SuperRange from './common/c7-SuperRange/SuperRange'
 
 function HW11() {
     // for autotests // не менять // можно подсунуть в локалСторэдж нужные числа, чтоб увидеть как они отображаются
-    const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 0))
+    const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 0)) //(number) => void
     const [value2, setValue2] = useState(restoreState<number>('hw11-value2', 100))
 
-    const change = (event: any, value: any) => {
-        // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
-    }
+    const minDistance = 0;
+    const handleChange = (
+        event: Event,
+        newValue: number | number[],
+        activeThumb: number,
+    ) => {
+        if (!Array.isArray(newValue)) {
+            setValue1(newValue)
+            return;
+        }
+        if (activeThumb === 0) {
+            setValue1(Math.min(newValue[0], value2 - minDistance))
+        } else {
+            setValue2(Math.max(newValue[1], value1 + minDistance))
+        }
+    };
 
     return (
         <div id={'hw11'}>
@@ -29,6 +42,9 @@ function HW11() {
                         <span id={'hw11-value'} className={s.number}>{value1}</span>
                         <SuperRange
                             id={'hw11-single-slider'}
+                            // onChangeRange={utilsRange}
+                            onChange={handleChange}
+                            value={value1}
                             // сделать так чтоб value1 изменялось // пишет студент
 
                         />
@@ -37,6 +53,10 @@ function HW11() {
                         <span id={'hw11-value-1'} className={s.number}>{value1}</span>
                         <SuperRange
                             id={'hw11-double-slider'}
+                            // onChangeRange={ utilsRange}
+                            value={[value1,value2]}
+                            // onChangeRange={utilsRange}
+                            onChange={handleChange}
                             // сделать так чтоб value1/2 изменялось // пишет студент
 
                         />
