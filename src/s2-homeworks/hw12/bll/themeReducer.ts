@@ -1,4 +1,6 @@
-const initState = 1 as number
+const initState = {
+    themeId: 1,
+}
 type StateThemeType = typeof initState
 
 type ActionThemeType = ChangeThemeIdType
@@ -8,7 +10,7 @@ export const themeReducer = (state = initState, action: ActionThemeType): StateT
 
         case "SET_THEME_ID":{
 
-            return action.id
+            return {themeId:action.id}
         }
         default:
             return state
