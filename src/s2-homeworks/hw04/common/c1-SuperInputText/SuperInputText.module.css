@@ -15,6 +15,7 @@
 .inputWrapper {
     display: flex;
     flex-direction: column-reverse;
+    position: relative;
 }
 
 .superInput {
@@ -31,8 +32,11 @@
 .error {
     color:#CC1439;
     position: absolute;
-    margin-bottom: 36px;
-    margin-left: 1px;
+    /*margin-bottom: 36px;*/
+    /*margin-left: 1px;*/
+    top:0;
+    left:5px;
+    transform: translate(0,-100%);
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;

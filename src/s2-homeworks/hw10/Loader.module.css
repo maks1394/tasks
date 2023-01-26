@@ -44,7 +44,7 @@
     width: 90%;
     height: 90%;
     border-radius: 50%;
-    background-color: #FFFFFF;
+    background-color: var(--background);
 }
 
 @keyframes load {

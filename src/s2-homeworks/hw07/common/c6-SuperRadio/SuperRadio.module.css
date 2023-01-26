@@ -49,12 +49,12 @@
     border-radius: 50%;
     position: absolute;
     margin-left: calc((var(--size-radio) - var(--size-checkMark))/2);
-    background-color: black;
+    background-color: var(--main-color);
     display: none;
 }
 
 .radio:checked ~.checkMark{
-    background-color: black;
+    background-color: var(--main-color);
     display: inline-block;
 }
 
