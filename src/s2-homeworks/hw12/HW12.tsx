@@ -21,7 +21,7 @@ const themes = [
 const HW12 = () => {
     // взять ид темы из редакса
     // const themeId = useSelector<{themeId:number},number>(state => state.themeId)
-    const [{themeId},dispatch] = useReducer(themeReducer,{themeId:1})
+    const [themeId,dispatch] = useReducer(themeReducer,1)
     // const dispatch = useDispatch()
     const change = (id: string) => { // дописать функцию
         dispatch(changeThemeId(Number(id)))
