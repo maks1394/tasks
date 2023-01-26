@@ -6,6 +6,7 @@
     color: red;
 }
 
+
 svg path {
     fill: var(--main-color);
 }
