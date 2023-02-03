@@ -51,7 +51,6 @@ const HW13 = () => {
             .catch((error) => {
                 debugger
                 if (axios.isAxiosError(error)) {
-                    console.log('error message: ', error.message);
                     switch ((error ??={}).response.status){
                         case '400':setImage(error400); break;
                         case '500':setImage(error500); break;

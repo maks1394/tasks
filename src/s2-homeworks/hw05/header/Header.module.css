@@ -1,5 +1,5 @@
 .burgerMenuIcon{
-    margin-left: 30px;
+    margin-left: 2%;
 }
 
 .burgerMenuIcon{
@@ -21,6 +21,6 @@ svg path {
 }
 
 .header h1 {
-    margin-right: 30px;
+    margin-right: 2%;
     color: var(--main-color);
 }

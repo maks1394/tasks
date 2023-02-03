@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
+    align-self: flex-start;
     margin-bottom: 1.875rem;
 }
 

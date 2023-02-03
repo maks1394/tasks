@@ -50,7 +50,7 @@ const HW1 = () => {
             <div className={s2.hwTitle}><p>Homework #1</p></div>
             <div className={s2.hw}>
                 {/*проверка отображения (не менять)*/}
-                <div>
+                <div className={s2.messagesContainer}>
                     <Message message={message0} />
                     <FriendMessage message={friendMessage0} />
                 </div>
