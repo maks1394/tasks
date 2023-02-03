@@ -6,7 +6,7 @@
     appearance: none;
     font: inherit;
     color: currentColor;
-    width: var(--size-radio);
+    min-width: var(--size-radio);
     height: var(--size-radio);
     border: 2px solid currentColor;
     border-radius: 50%;
@@ -48,6 +48,8 @@
     height: var(--size-checkMark);
     border-radius: 50%;
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     margin-left: calc((var(--size-radio) - var(--size-checkMark))/2);
     background-color: var(--main-color);
     display: none;

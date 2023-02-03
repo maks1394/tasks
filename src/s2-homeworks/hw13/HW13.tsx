@@ -7,12 +7,18 @@ import success200 from './images/200.svg'
 import error400 from './images/400.svg'
 import error500 from './images/500.svg'
 import errorUnknown from './images/error.svg'
+import {Loader} from "../hw10/Loader";
 
 /*
 * 1 - дописать функцию send
 * 2 - дизэйблить кнопки пока идёт запрос
 * 3 - сделать стили в соответствии с дизайном
 * */
+
+type ResponseDataType = {
+    errorText:string
+    info:string
+}
 
 const HW13 = () => {
     const [code, setCode] = useState('')
@@ -32,14 +38,39 @@ const HW13 = () => {
         setInfo('...loading')
 
         axios
-            .post(url, {success: x})
+            .post<ResponseDataType>(url, {success: x})
             .then((res) => {
+                debugger
                 setCode('Код 200!')
                 setImage(success200)
+                setText(res.data.errorText)
+                setInfo(res.data.info)
                 // дописать
 
             })
-            .catch((e) => {
+            .catch((error) => {
+                debugger
+                if (axios.isAxiosError(error)) {
+                    console.log('error message: ', error.message);
+                    switch ((error ??={}).response.status){
+                        case '400':setImage(error400); break;
+                        case '500':setImage(error500); break;
+                        default: setImage(errorUnknown)
+                    }
+                    if ((error ??={}).response.status ===0){
+                        setCode('Error!')
+                        setText(error.message)
+                        setInfo('AxiosError')
+                    } else {
+                        setCode(`Ошибка ${(error ??={}).response.status}!`)
+                        setText((error ??={}).response.data?.errorText)
+                        setInfo((error ??={}).response.data?.info)
+                    }
+                    return error.message;
+                } else {
+                    console.log('unexpected error: ', error);
+                    return 'An unexpected error occurred';
+                }
                 // дописать
 
             })
@@ -47,7 +78,7 @@ const HW13 = () => {
 
     return (
         <div id={'hw13'}>
-            <div className={s2.hwTitle}>Homework #13</div>
+            <div className={s2.hwTitle}><p>Homework #13</p></div>
 
             <div className={s2.hw}>
                 <div className={s.buttonsContainer}>
@@ -56,7 +87,7 @@ const HW13 = () => {
                         onClick={send(true)}
                         xType={'secondary'}
                         // дописать
-
+                        disabled={info ==='...loading'}
                     >
                         Send true
                     </SuperButton>
@@ -64,6 +95,7 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
+                        disabled={info ==='...loading'}
                         // дописать
 
                     >
@@ -73,6 +105,7 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
+                        disabled={info ==='...loading'}
                         // дописать
 
                     >
@@ -82,6 +115,7 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
+                        disabled={info ==='...loading'}
                         // дописать
 
                     >
@@ -102,7 +136,7 @@ const HW13 = () => {
                             {text}
                         </div>
                         <div id={'hw13-info'} className={s.info}>
-                            {info}
+                            {info === '...loading' ? <Loader/>:info}
                         </div>
                     </div>
                 </div>

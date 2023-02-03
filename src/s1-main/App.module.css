@@ -1,10 +1,12 @@
 .App {
     --header_height: 60px;
+    color:var(--main-color)
 }
 
 .hw {
-    margin: 0 auto;
-    width: 1200px;
+    margin-left: 30px;
+    margin-right: 30px;
+    /*width: 1200px;*/
 }
 
 .hwTitle {
@@ -17,12 +19,12 @@
 }
 
 .hwTitle p{
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     /*padding: 0 1.25rem;*/
-    width: 1200px;
+    /*width: 1200px;*/
+    margin-left: 30px;
+    margin-right: 30px;
+    color:var(--main-color);
 }
 
-#hw10 {
-    min-height: 300px;
-}
 

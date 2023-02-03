@@ -50,6 +50,8 @@
 .friendMessageText {
     font-family: Montserrat,sans-serif;
     font-size: 1rem;
+    overflow-wrap: anywhere;
+    max-width: 100%;
 }
 
 .friendTime {
