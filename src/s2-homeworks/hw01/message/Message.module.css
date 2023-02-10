@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     justify-content: end;
     align-self: flex-end;
+    margin-left: auto;
 }
 
 .imageAndText {
