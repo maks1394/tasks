@@ -1,7 +1,18 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
 .tech {
 
 }
 
 .loading {
+    align-self: flex-end;
+    color: #4D4D4D;
+}
 
+.debouncedInput:focus{
+    border: 1px solid #0066CC;
 }

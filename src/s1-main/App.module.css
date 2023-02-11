@@ -6,6 +6,7 @@
 .hw {
     margin-left: 2%;
     margin-right: 2%;
+    /*min-width: 100vw;*/
     /*width: 1200px;*/
 }
 
@@ -28,9 +29,7 @@
 }
 
 .messagesContainer{
-    display: flex;
-    flex-direction: column;
-    width:100%;
+
 }
 
 

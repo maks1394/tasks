@@ -31,6 +31,7 @@ const HW14 = () => {
     const [techs, setTechs] = useState<string[]>([])
 
     const sendQuery = (value: string) => {
+        debugger
         setLoading(true)
         getTechs(value)
             .then((res) => {
@@ -39,11 +40,18 @@ const HW14 = () => {
                 // сохранить пришедшие данные
 
                 //
+                debugger
+                if (res){
+                    setTechs(res.data.techs)
+                }
+                setLoading(false)
+                // setSearchParams(undefined)
             })
     }
 
     const onChangeText = (value: string) => {
         setFind(value)
+        setSearchParams({find:value})
         // делает студент
 
         // добавить/заменить значение в квери урла
@@ -66,14 +74,15 @@ const HW14 = () => {
 
     return (
         <div id={'hw14'}>
-            <div className={s2.hwTitle}>Homework #14</div>
+            <div className={s2.hwTitle}><p>Homework #14</p></div>
 
-            <div className={s2.hw}>
+            <div className={`${s2.hw} ${s.container}`}>
                 <SuperDebouncedInput
                     id={'hw14-super-debounced-input'}
                     value={find}
                     onChangeText={onChangeText}
                     onDebouncedChange={sendQuery}
+                    className={s.debouncedInput}
                 />
 
                 <div id={'hw14-loading'} className={s.loading}>
