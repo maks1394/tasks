@@ -12,7 +12,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     box-sizing: border-box;
-
+    background-color: var(--background);
+    transition: all .3s linear;
 }
 
 code {
@@ -34,7 +35,7 @@ code {
 
 [data-theme='2'] {
     --main-color: black;
-    --background: #61dafb;
+    --background: #DDEEFF;
     --box-shadow:0px 0px 40px rgba(29, 33, 38, 0.13), 0px 0px 2px rgba(29, 33, 38, 0.1);
 }
 

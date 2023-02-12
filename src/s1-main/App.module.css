@@ -14,8 +14,7 @@
     border-bottom: 1px solid #d9d9d9;
     border-bottom: 1px solid var(--gray);
     font-size: 1.375rem;
-    font-weight: 600;
-    margin: 0 0 1.5rem;
+    font-weight: 600;margin: 0 0 1.5rem;
     padding: 2.5rem 0 .625rem;
 }
 

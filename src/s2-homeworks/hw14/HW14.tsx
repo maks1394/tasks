@@ -39,8 +39,7 @@ const HW14 = () => {
 
                 // сохранить пришедшие данные
 
-                //
-                debugger
+
                 if (res){
                     setTechs(res.data.techs)
                 }
