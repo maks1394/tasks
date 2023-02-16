@@ -13,7 +13,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     box-sizing: border-box;
     background-color: var(--background);
-    transition: all .3s linear;
+    transition: background-color .3s linear;
 }
 
 code {
